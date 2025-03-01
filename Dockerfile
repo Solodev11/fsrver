@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg aria2 gi
 RUN git clone https://github.com/comfyanonymous/ComfyUI /content/ComfyUI
 
 # Download required model files
+# Download required model files
 RUN mkdir -p /content/ComfyUI/models/unet && \
     aria2c --console-log-level=error -c -x 16 -s 16 -k 1M "https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/flux1-dev.sft" -d /content/ComfyUI/models/unet -o flux1-dev.sft && \
     mkdir -p /content/ComfyUI/models/clip && \
@@ -20,8 +21,7 @@ RUN mkdir -p /content/ComfyUI/models/unet && \
     mkdir -p /content/ComfyUI/models/vae && \
     aria2c --console-log-level=error -c -x 16 -s 16 -k 1M "https://huggingface.co/camenduru/FLUX.1-dev/resolve/main/ae.sft" -d /content/ComfyUI/models/vae -o ae.sft && \
     mkdir -p /content/ComfyUI/models/loras && \
-    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M "https://civitai.com/api/download/models/896422?type=Model&format=SafeTensor" -d /content/ComfyUI/models/loras -o zanshou-kin-flux-ueno-manga-style.safetensors
-
+    aria2c --console-log-level=error -c -x 16 -s 16 -k 1M "https://huggingface.co/soloai1/fluxtrain2/resolve/main/my_first_flux_lora_v1_000003500.safetensors" -d /content/ComfyUI/models/loras -o my_first_flux_lora.safetensors
 # Copy requirements.txt earlier so it can be used for installing dependencies
 COPY builder/requirements.txt /requirements.txt
 

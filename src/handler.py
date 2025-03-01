@@ -67,7 +67,7 @@ def generate(input):
     sampler_name = values.get("sampler_name", "euler")
     scheduler = values.get("scheduler", "simple")
     job_id = values.get("job_id", "test-job-123")
-    lora_name = values.get("lora_name", "zanshou-kin-flux-ueno-manga-style.safetensors")
+    lora_name = values.get("lora_name", "my_first_flux_lora.safetensors")
     image_path = None
 
     # Path to the LoRA model based on lora_name

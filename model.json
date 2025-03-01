@@ -4,13 +4,13 @@
     "width": 512,
     "height": 512,
     "seed": 13379,
-    "steps": 24,
-    "guidance": 3.5,
+    "steps": 40,
+    "guidance": 7.5,
     "lora_strength_model": 0.8,
     "lora_strength_clip": 0.8,
     "sampler_name": "euler",
     "scheduler": "simple",
     "job_id": "test-job-123",
-    "lora_name": "zanshou-kin-flux-ueno-manga-style.safetensors"
+    "lora_name": "my_first_flux_lora.safetensors"
   }
 }
